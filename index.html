@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculador de pagos de cuotas</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Agregar Producto</h1>
+            <form id="productForm">
+                <label for="productName">Nombre del producto:</label>
+                <input type="text" id="productName" name="productName" required>
+                
+                <label for="productPrice">Precio del producto:</label>
+                <input type="number" id="productPrice" name="productPrice" required>
+                
+                <label for="productInstallments">Número de cuotas:</label>
+                <input type="number" id="productInstallments" name="productInstallments" required>
+                
+                <button type="button" onclick="addProduct()">Agregar Producto</button>
+            </form>
+            <div class="header-container">
+                <h2>Listado de Productos Agregados</h2>
+                <div class="sorting-container">
+                    <label for="sortButtons">Ordenar por:</label>
+                    <div class="sorting-buttons" id="sortButtons">
+                        <button type="button" id="sortName" onclick="sortProducts('name')">Nombre</button>
+                        <button type="button" id="sortInstallments" onclick="sortProducts('installments')">Cuotas</button>
+                        <button type="button" id="sortPrice" onclick="sortProducts('price')">Precio</button>
+                    </div>
+                </div>
+            </div>
+            <div id="productList" class="scrollable"></div>
+        </div>
+        <div class="calculation-container">
+            <button type="button" onclick="calculateTotalPayments()">Calcular Pagos Totales</button>
+            <div id="totalPayments"></div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
